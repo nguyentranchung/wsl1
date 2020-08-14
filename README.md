@@ -66,3 +66,12 @@ Trong command line gõ: ```code .```
 Thêm 1 site mới bằng cách tạo file có tên: ```xxx.conf``` trong thư mục */etc/nginx/sites-enabled*
 
 File mẫu xem [tại đây](https://github.com/nguyentranchung/wsl1/blob/master/site.conf)
+
+## Chỉnh sửa file hosts
+
+Mở file hosts: ```C:\Windows\System32\drivers\etc\hosts```
+
+Thêm dòng:
+127.0.0.1 chungnguyen.test
+
+Lưu lại với quyền admin, nếu không được thì copy file hosts ra desktop sửa, sau đó dán (paste) lại thư mục ```C:\Windows\System32\drivers\etc```
