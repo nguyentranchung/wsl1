@@ -34,6 +34,15 @@ sudo apt-get update -y
 apt install nginx redis mariadb-server php7.4 php7.4-fpm php7.4-mysql php7.4-mbstring -y
 ```
 
+## Start service
+
+```shell
+service nginx start
+service php7.4-fpm start
+service mariadb start
+service redis-server start
+```
+
 ## Cho phép mysql đăng nhập root với password null
 
 ```shell
@@ -46,11 +55,14 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '';
 FLUSH PRIVILEGES;
 ```
 
-## Start service
+## VScode truy cập vào WSL
 
-```shell
-service nginx start
-service php7.4-fpm start
-service mariadb start
-service redis-server start
-```
+Cài extension: [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl)
+
+Trong command line gõ: ```code .```
+
+## Thêm site laravel/php
+
+Thêm 1 site mới bằng cách tạo file có tên: ```xxx.conf``` trong thư mục */etc/nginx/sites-enabled*
+
+File mẫu xem [tại đây](https://github.com/nguyentranchung/wsl1/blob/master/site.conf)
