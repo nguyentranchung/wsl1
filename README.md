@@ -31,7 +31,7 @@ sudo add-apt-repository ppa:ondrej/nginx
 sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://ftp.yz.yamagata-u.ac.jp/pub/dbms/mariadb/repo/10.5/ubuntu bionic main'
 sudo apt-get update -y
-apt install nginx redis mariadb-server php7.4 php7.4-fpm php7.4-mysql php7.4-mbstring php7.4-xml -y
+apt install nginx redis mariadb-server php7.4 php7.4-fpm php7.4-mysql php7.4-mbstring php7.4-xml php7.4-zip -y
 ```
 
 ## Start service
