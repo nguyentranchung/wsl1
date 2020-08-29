@@ -34,6 +34,7 @@ sudo apt-get update -y
 apt install zip unzip nginx redis mariadb-server php7.4 php7.4-fpm php7.4-mysql php7.4-mbstring php7.4-xml php7.4-bcmath php7.4-zip composer -y
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php composer-setup.php --install-dir=/usr/bin --filename=composer
+rm -f composer-setup.php
 git config --global user.name "Nguyen Tran Chung"
 git config --global user.email nguyentranchung52th@gmail.com
 ```
