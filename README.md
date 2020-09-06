@@ -1,11 +1,25 @@
 # Cài đặt WSL 1 trên Windows 10
 
+## Lợi ích
+    * Chạy được từ dòng lệnh các lệnh linux như ls, grep, sed ... hoặc bất kỳ chương trình nhị phân 64 bit (ELF-64) nào của Linux
+    * Chạy được các công cụ như: vim, emacs ...; các ngôn ngữ lập trình như NodeJS, JavaScript, C/C++, C# ..., các dịch vụ như PHP, Nginx, MySQL, Apache, ...
+    * Có thể thực hiện cài đặt các gói từ trình quản lý gói của Distro đó (như lệnh apt trên Ubuntu, yum trên CentOS)
+    * Từ Windows có thể chạy các ứng dụng Linux thông qua command line
+    * Từ Linux có thể gọi ứng dụng của Windows
+## Yêu cầu
+    1. Windows 10 1607 ([System.Environment]::OSVersion.Version)
+    2. Kích hoạt chế độ hỗ trợ ảo hóa của CPU (CPU Virtualization), bạn kích hoạt bằng cách truy cập vào BIOS của máy, tùy loại mainboard mà nơi kích hoạt khác nhau
+
 ## Update windows phiên bản mới nhất
 
 ## Kích hoạt Windows Subsystem Linux
 
 ```powershell
+# Only WSL 1
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+# WSL 2
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+# hoặc Turn Windows features on or off > Windows Subsystem for Linux + Virtual Machine Platform
 ```
 
 ## Mở windows store lên cài đặt Ubuntu 18.04
@@ -16,6 +30,12 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 ```powershell
 ubuntu1804 config --default-user root
+```
+
+## Truy cập vào WSL
+
+```powershell
+wsl
 ```
 
 ## Cài đặt các gói cần thiết để chạy một webserver trên Ubuntu
@@ -68,7 +88,7 @@ Trong command line gõ: ```code .```
 
 ## Thêm site laravel/php
 
-Thêm 1 site mới bằng cách tạo file có tên: ```xxx.conf``` trong thư mục */etc/nginx/sites-enabled*
+Thêm 1 site mới bằng cách tạo file có tên: ```site.conf``` trong thư mục */etc/nginx/sites-enabled*
 
 File mẫu xem [tại đây](https://github.com/nguyentranchung/wsl1/blob/master/site.conf)
 
